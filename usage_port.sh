@@ -6,6 +6,8 @@ POLICY_PASS='secret123'
 AUTH_PASS='secret123'
 # SNMPv3 username
 SNMP_USER='user1'
+# Slack API Link
+SLACK_API=''
 # Ingress and Outgress threshold before sending notification
 IN_TRESH=95
 OUT_TRESH=95
@@ -22,7 +24,7 @@ EXCLUDE_PORT=(
 # Notification function
 function Notif() {
 	msg=`echo -e "Port: ${port}@${mode} have reach limit threshold. Port usage is ${avgIn}%"`
-	curl -X POST -H 'Content-type: application/json' --data "{\"text\":\"[$currentHost] $msg\"}" **YOUR SLACK API LINK**
+	curl -X POST -H 'Content-type: application/json' --data "{\"text\":\"[$currentHost] $msg\"}" "$SLACK_API"
 }
 # Generate table of interface mapped to OID.
 function GenIntTable() {
