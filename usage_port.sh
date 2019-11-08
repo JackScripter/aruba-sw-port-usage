@@ -17,8 +17,8 @@ CHECK_HOST=("sw1" "sw2" "sw3")
 HOST_PORTMAP=("/scripts/portmap_sw1" "/scripts/portmap_sw2" "/scripts/portmap_sw3")
 # Exclude list
 EXCLUDE_PORT=(
-"sw1" "2/C4,2/E16,2/B22,1/C8"
-"sw3" "1/20,2/13,3/17,4/10"
+"sw1" "2/E16,2/B22,3/C8"
+"sw3" "1/21,3/13"
 )
 
 # Notification function
